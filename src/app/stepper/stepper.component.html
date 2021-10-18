@@ -1,0 +1,20 @@
+
+<mat-stepper orientation="vertical">
+
+  <mat-step *ngFor="let item of questionsList">
+      <ng-template matStepLabel>{{item.title}}</ng-template>
+      <ng-template matStepContent>
+        <mat-form-field appearance="fill">
+          <input matInput
+                 [(ngModel)]="item.answer"
+                 required>
+        </mat-form-field>
+      </ng-template>
+    </mat-step>
+
+</mat-stepper>
+
+<div class="button-wrap">
+  <button mat-raised-button color="primary" (click)="onPollComplete()">Результат</button>
+</div>
+

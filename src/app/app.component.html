@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+
+
+<app-stepper [questionsList]="questions"
+             (pollComplete)="getAnswers($event)">
+</app-stepper>
+
+
+<div class="result">
+  <div *ngFor="let item of result">
+    <b>Вопрос: {{item.title}}</b>
+    <p>Ответ: {{item.answer}}</p>
+  </div>
+</div>
